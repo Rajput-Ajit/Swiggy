@@ -1,0 +1,983 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<link rel="stylesheet" href="swiggy.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+			<title>
+				Swiggy
+			</title>
+			<style>
+			
+			
+			.top-nav-content i
+				{ 
+					margin:5%;
+				}
+			#name
+				{
+					margin-left:5%;
+					width:300px;
+				}	
+			#logo
+				{
+					height:100%;
+					text-align:center;
+					display:flex;
+					justify-content:center;
+					align-items:center;
+					
+				}
+			.logo-img
+				{
+					height:60%;
+					width:30%;
+					transition:height 1s linear;
+				}	
+				
+			.logo-img:hover
+				{
+					height:90%;
+					width:30%;
+				}		
+				.image-div	img
+					{
+						height:85%;
+						object-fit: cover;
+
+					}
+				.pune-image-div	img
+					{
+						height:85%;
+						width:100%;
+						object-fit:cover;
+						object-position:50% 50%;
+						border-radius:10px;
+					}
+				.rating i
+						{
+							color:green;
+						}
+				.width {height:200px;width:500px;padding:0.1%;margin:1%;}
+				
+				.solo-restaurant img
+					{
+						height:100%;
+						width:100%;
+						object-fit:cover;
+						object-position:50% 50%;
+						border-radius:10px;
+					}
+				.store i
+					{
+						font-size:55px;
+					}
+				.store p
+					{
+						
+						font-size:16px;
+						margin:0;
+					}
+				.top-nav-content i
+					{
+						
+						
+					}
+				.items-horizontal	img
+					{
+						height:60%;
+						width:300px;
+						object-fit: cover;
+						border-radius:10px;
+						<!-- object-position:50% 50%; -->
+					}
+				.items-horizontal a
+					{
+						text-decoration:none;
+						color:black;
+					}
+				a h3
+					{
+						margin:5px;
+						
+					}
+				a p
+					{
+						margin:5px;
+						
+					}
+				.item-rating i
+					{
+						color:green;
+					}
+					
+					
+					
+					
+					
+				
+				#fullform
+					{
+						height:744px;
+						width:100%;
+						border:none;
+						background:rgba(0, 0, 0, 0.5);
+						position:fixed;
+						top:0px;
+						left:0;
+						display:none;
+						z-index:2;
+					}
+				#closebutton
+					{
+						height:40px;
+						width:40px;
+						border-radius:50%;
+						background:gray;
+						position:absolute;
+						top:0;
+						right:0;
+						z-index:2;
+						display:flex;
+						justify-content:center;
+						align-items:center;
+						border:1px solid white;
+						z-index:2;
+					}
+				#closebutton i
+					{
+						color:white;
+						font-weight:bold;
+						font-size:25px;
+						z-index:1;
+					}
+					
+				#click
+					{
+						height:100%;
+						width:100%;
+						border-radius:50%;
+						background-color:green;
+						color:white;
+						border:none;
+					}
+				
+				#pop
+					{
+						border:5px double red;
+						border-color:red;
+						background:white;
+					}
+				
+				fieldset div
+					{
+						margin-top:10px;
+					padding:1%;
+					font-size:20px;
+					}
+				
+				fieldset	{
+					width:40%;
+					margin-left:29%;
+					font-size:25px;
+					margin-top:40px;
+						}	
+				input
+					{
+						
+					}
+				label	
+					{
+						font-size:18px;
+						margin-left:30px;
+						color:orange;
+					}
+				.question
+					{
+						font-size:20px;
+						margin-left:15px;
+						font-weight:bold;
+						color:black;
+						
+					}
+				.button > input
+					{
+						margin:15px;
+					}
+					
+				.chakra-petch-light {
+					  font-family: "Chakra Petch", sans-serif;
+					  font-weight: 300;
+					  font-style: normal;
+						}
+				
+				.buttondiv
+					{
+						height:50px;
+						width:50px;
+						background-color:orange;
+						border-radius:50%;
+						position:fixed;
+						bottom:50px;
+						right:50px;
+						z-index:2;
+					}
+				
+				
+				
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		</head>
+		<body id="over">
+	
+			<div class="top-nav">
+				<div class="top-nav-content" id="logo">
+					<img src="logo.png" class="logo-img">
+				</div>
+				<div class="top-nav-content">
+					<u>Other</u>
+					<i class="fa-solid fa-chevron-down float"></i>
+				</div>
+				<div class="top-nav-content" id="name">
+					<i class="fa-solid fa-suitcase"></i>
+					Swiggy Corporate
+				</div>
+				<div class="top-nav-content">
+					<i class="fa-solid fa-magnifying-glass"></i>
+					Search
+				</div>
+				<div class="top-nav-content">
+					<i class="fa-solid fa-percent"></i>
+					Offers
+					<sup>
+						New
+					</sup>
+				</div>
+				
+				<div class="top-nav-content"> 
+					<i class="fa-regular fa-life-ring"></i>
+					Help
+				</div>
+				<div class="top-nav-content">
+					<i class="fa-regular fa-user"></i>
+					Sign In
+				</div>
+				<div class="top-nav-content">
+					<i class="fa-solid fa-cart-shopping"></i>
+					Cart
+				</div>
+			</div>
+			<div class="item-list-horizontal">
+				<div class="tag">
+					<h2>What's on your mind?</h2>
+				</div>
+				<div class="image-div">	
+					
+					
+					<div class="width"><img src="top1.jpg"></div>
+					<div class="width"><img src="top2.jpg"></div>
+					<div class="width"><img src="top3.jpg"></div>
+					<div class="width"><img src="top4.jpg"></div>
+					<div class="width"><img src="top5.jpg"></div>
+					<div class="width"><img src="top6.jpg"></div>
+					<div class="width"><img src="top7.jpg"></div>
+					<div class="width"><img src="top8.jpg"></div>
+					<div class="width"><img src="top9.jpg"></div>
+					<div class="width"><img src="top10.jpg"></div>
+					<div class="width"><img src="top11.jpg"></div>
+					<div class="width"><img src="top12.jpg"></div>
+				</div>
+			
+			</div>
+	
+			
+	<!-- not scrolling		 -->
+
+			<div class="items-horizontal">
+				<div class="tag">
+					<h2>Top restaurant chains in Pune</h2>
+				</div>
+				
+				<div class="image-div">
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/4b444582-00bd-403d-9dc2-27e9f9cef992_649401.jpg">
+						<h3>
+							Mc Donald's
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Burgers, Beverages, Cafe, Desserts
+						</p>
+						<p>
+							Hinjewadi
+						</p>
+					</a>                                                                                                                       
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552">
+						<h3>
+							Subway
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Healthy Food, Salads, Snacks,..
+						</p>
+						<p>
+							Tathawade
+						</p>
+					</a>
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/cz9mwuypqm7k5dqmpeta">
+						<h3>
+							Pure Veg Meals by LunchBox
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Biryani, North Indian, Desserts,...
+						</p>
+						<p>
+							Hinjewadi
+						</p>
+					</a>
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/b1b35780a9b1dfeb26d680506d494eaa">
+						<h3>
+							The Brooklyn Creamery -...
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Desserts, Ice Cream, Healthy Food
+						</p>
+						<p>
+							Hinjewadi
+						</p>
+					</a>
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/poymismten2l3pbit1ui">
+						<h3>
+							Oye Kiddan
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							North Indian, Punjabi, Thalis, Desserts
+						</p>
+						<p>
+							Hinjewadi
+						</p>
+					</a>
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d8d85afa5c5e92461d30ff2ca867a587">
+						<h3>
+							HRX by EatFit
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Healthy Food, Salads, Keto, Pastas
+						</p>
+						<p>
+							Hinjewadi
+						</p>
+					</a>
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/6e44fd7f1e5cd9967edfe47c10247671">
+						<h3>
+							Great Indian Khichdi by EatFit
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Home Food, Indian, North Indian,...
+						</p>
+						<p>
+							Hinjewadi
+						</p>
+					</a>
+					<a href="" style="margin:2%;">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/reykt14ijxya20zbpiud">
+						<h3>
+							Kaati Zone Rolls & Wraps
+						</h3>
+						<p>
+							<i class="fa-solid fa-star-half-stroke"></i>
+									4.5. 35-40 mins
+						</p>
+						<p>
+							Fast Food, Bengali, Beverages,...
+						</p>
+						<p>
+							Wakad
+						</p>
+					</a>
+				</div>
+			</div>	
+				
+	<!-- city restaurant div		 -->
+			<div class="city-restaurant">
+				<h1>
+					Restaurants with online food delivery in Pune
+				</h1>
+				<div class="sort-div">
+					<div class="sort-tags">
+						filter
+						<i class="fa-solid fa-filter"></i>
+					</div>
+					<div class="sort-tags">
+						Sort by
+						<i class="fa-solid fa-sort-down"></i>
+					</div>
+					<div class="sort-tags">
+						Fast delivery
+					</div>
+					<div class="sort-tags">
+						New On Swiggy
+					</div>
+					<div class="sort-tags">
+						Rating 4.0+
+					</div>
+					<div class="sort-tags">
+						Pure Veg
+					</div>
+					<div class="sort-tags">
+						Offers
+					</div>
+					<div class="sort-tags">
+						Rs. 300-Rs.600
+					</div>
+					<div class="sort-tags">
+						Less Than Rs.300
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597">
+					</div>
+					<div class="dish-name">
+						Chinese Wok
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Chinese, Asian, Tibetan, Desserts 
+					</div>
+					<div class="location">
+						Chinchwad
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/t75cewfmn6nhtlureo8g">
+					</div>
+					<div class="dish-name">
+						Taste of Indore (Since 2018)
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Street Food, Chaat, Sweets, Snacks, Fast Food, Beverages, Indian
+					</div>
+					<div class="location">
+						Wakad
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/grkegiwnofkgbqpwvcbz">
+					</div>
+					<div class="dish-name">
+						Indori Sarafa Bazaar (Wakad)
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Street Food, Chaat, Snacks, Desserts, Sweets 
+					</div>
+					<div class="location">
+						Wakad
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ncss5ylexusfjvedohfv">
+					</div>
+					<div class="dish-name">
+						Hotel Nisarg ( Special Misal)
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Chinese, Asian, Tibetan, Desserts
+					</div>
+					<div class="location">
+						Chinchwad
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/4521696887484d2ce898c9e81c9fdbbe">
+					</div>
+					<div class="dish-name">
+						Chitale Bandhu Mithaiwale
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Sweets
+					</div>
+					<div class="location">
+						Ravet
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/r5sejrrfsn2pqdo0yokj">
+					</div>
+					<div class="dish-name">
+						Kwality Walls Frozen Dessert
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Desserts, Ice Cream, Ice Cream Cakes 
+					</div>
+					<div class="location">
+						Hinjawadi
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/22/e284e6db-1941-49a3-8a66-8a531d26c72f_662674.JPG">
+					</div>
+					<div class="dish-name">
+						Naadbramha Idli
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						South Indian, Beverages
+					</div>
+					<div class="location">
+						Wakad
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/a2044bc42103cac13c92925e2862260f">
+					</div>
+					<div class="dish-name">
+						Oho Shawarma
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Arabian, Snacks, 
+					</div>
+					<div class="location">
+						Chinese
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/c292dd864563b45acbec936e633f746b">
+					</div>
+					<div class="dish-name">
+						Jumboking Indian Burger
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						American, Mexican
+					</div>
+					<div class="location">
+						Hinjawadi
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/qtll91n347jjnywfngd1">
+					</div>
+					<div class="dish-name">
+						Chinese Hut
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Chinese 
+					</div>
+					<div class="location">
+						Hinjewadi
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/zvvosi8aw7mujogghnqk">
+					</div>
+					<div class="dish-name">
+						Dum Safar Biryani
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Biryani, Kebabs, Tandoor, Indian, Desserts
+					</div>
+					<div class="location">
+						Hinjewadi
+					</div>
+				</div>
+				<div class="solo-restaurant">
+					<div class="dish-image">
+						<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/b1b35780a9b1dfeb26d680506d494eaa">
+					</div>
+					<div class="dish-name">
+						The Brooklyn Creamery -
+					</div>
+					<div class="item-rating">
+						<i class="fa-solid fa-star-half-stroke"></i>
+						3.9. 50-55 mins
+					</div>
+					<div class="about-item">
+						Desserts, Ice Cream, Healthy Food 
+					</div>
+					<div class="location">
+						Hinjawadi
+					</div>
+				</div>
+				
+			</div>
+			<div class="across-city">
+				<div class="tag-size">
+					Best places to eat across cities
+				</div>
+				<div class="city">
+					Best restaurant in Banglore
+				</div>
+				<div class="city">
+					Best restaurant in Pune
+				</div>
+				<div class="city">
+					Best restaurant in Mumbai
+				</div>
+				<div class="city">
+					Best restaurant in Hyderabad
+				</div>
+				<div class="city">
+					Best restaurant in Delhi
+				</div>
+				<div class="city">
+					Best restaurant in Chennai
+				</div>
+				<div class="city">
+					Best restaurant in Nagpur
+				</div>
+				<div class="city">
+					Best restaurant in Thane
+				</div>
+			</div>
+			<div class="cuisines">
+				<div class="tag-size">
+					Best Cuisines Near Me
+				</div>
+				<div class="cuisines-name">
+					Chinese restaurant near me
+				</div>
+				<div class="cuisines-name">
+					Korean restaurant near me
+				</div>
+				<div class="cuisines-name">
+					Punjabi restaurant near me
+				</div>
+				<div class="cuisines-name">
+					Italian restaurant near me
+				</div>
+			</div>
+			<div class="explore">
+				<div class="tag-size">
+					Explore Every Restaurants Near Me
+				</div>
+				<div class="explore-rest">
+					explore Restaurants Near me
+				</div>
+				<div class="explore-rest">
+					explore Top rated Restaurants Near me
+				</div>
+			</div>
+			<div class="download">
+				<h1>
+					For better experience,download <br>the Swiggy app now
+				</h1>
+				<div class="store">
+					<div class="i-class">
+						<i class="fa-brands fa-google-play"></i>
+					</div>
+					<p>
+						Get It On
+					</p>
+						Google Play
+				</div>
+				<div class="store">
+					<div class="i-class">
+						<i class="fa-brands fa-apple"></i>
+					</div>
+					<p>	
+						Download On The
+					</p>	
+						App Store
+				</div>
+			</div>
+			<div class="footer" id="slide">
+				<div class="footer-content">
+					<h1>
+						Swiggy
+					</h1>
+					<p>
+						© 2024 Bundl Technologies Pvt. Ltd
+					</p>
+				</div>
+				<div class="footer-content">
+					<h3>
+						Company
+					</h3>
+					<p>
+						About
+					</p>
+					<p>
+						Careers
+					</p>
+					<p>
+						Team
+					</p>
+					<p>
+						Swiggy one
+					</p>
+					<p>
+						Swiggy instamart
+					</p>
+					<p>
+						swiggy Genie
+					</p>
+				</div>
+				<div class="footer-content">
+					<h3>
+						Contact Us
+					</h3>
+					<p>
+						Help & Support
+					</p>
+					<p>
+						Partner with us
+					</p>
+					<p>
+						Ride with us
+					</p>
+					<br>	
+					<h3>
+						Legal
+					</h3>
+					<p>
+						Terms & Conditions
+					</p>
+					<p>
+						Cookie Policy
+					</p>
+					<p>
+						Privacy Policy
+					</p>
+					<p>
+						Investor Relations
+					</p>
+				</div>
+				<div class="footer-content">
+					<h3>
+						We Deliver to:
+					</h3>
+					<p>
+						Banglore
+					</p>
+					<p>
+						Hyderabad
+					</p>
+					<p>
+						Delhi
+					</p>
+					<p>
+						Mumbai
+					</p>
+					<p>
+						Pune
+					</p>
+					<p>
+						Nashik
+					</p>
+					<p>
+						588+ cities
+					</p>
+				</div>
+			</div>
+			
+			
+			<div id="fullform">
+				<div id="closebutton" onclick="yahoo()">
+					<i class="ri-close-large-line"></i>
+				</div>
+			<fieldset id="pop">
+				
+				<Form method="post" action="">
+					<div>
+						<label class="question chakra-petch-light">
+							Full Name: 
+						</label>
+						<input type="text" name="Full Name" required" style="width:70%;border:none;border-bottom:1px solid black;">
+					</div>
+					<div>
+						<label class="question chakra-petch-light">
+							Email: 
+						</label>
+						<input type="email" name="email" required" style="width:80%;border:none;border-bottom:1px solid black;">
+					</div>
+					<div>
+						<label class="question chakra-petch-light">
+								1. Did our service meet your expectations?
+						</label><br>
+						<label>
+							Yes
+						</label>
+						<input type="radio" Name="answer">
+						<label>
+							No
+						</label>
+						<input type="radio" Name="answer">
+					</div>
+					<div>
+						<label class="question chakra-petch-light">
+							2. What aspect of the service were you least satisfied by?
+						</label><br>
+						<label>
+							Delivery time
+						</label>
+						<input type="checkbox" Name="delivery time">
+						<label>
+							Packaging
+						</label>
+						<input type="checkbox" Name="Packaging">
+						<label>
+							Product quality
+						</label>
+						<input type="checkbox" Name="Product quality">
+					</div>
+					<div>
+						<label class="question chakra-petch-light">
+							3. Would You recommend our service to a friend?
+						</label><br>
+						<label>
+							Yes
+						</label>
+						<input type="radio" name="serveice">
+						<label>
+							No
+						</label>
+						<input type="radio" name="serveice">
+					</div>
+					<div>
+						<label class="question chakra-petch-light">
+							4. How did you hear about our company?
+						</label><br>
+						<label>
+							Social media
+						</label>
+						<input type="checkbox" Name="about company">
+						<label>
+							Advertising
+						</label>
+						<input type="checkbox" Name="about company">
+						<label>
+							Search Engine
+						</label>
+						<input type="checkbox" Name="about company">
+						<label>
+							Refered
+						</label>
+						<input type="checkbox" Name="about company">
+					</div>
+					<div>
+						<label class="question chakra-petch-light">
+							5. Overall Review
+						</label><br>
+						<textarea style="width:50%;height:60px;resize:none;margin-left:30px;">
+							
+						</textarea>
+					</div>
+					<center class="button">
+					
+						<input type="submit" value="submit">
+						<input type="reset" value="reset">
+					</center>
+				</form>
+				<center style="margin-top:40px;color:orange;">
+					Thank You
+				</center>
+			</fieldset>
+			</div>
+
+
+			<div class="buttondiv">
+				<button type="button" id="click" onclick="google()">
+					Open
+				</button>
+			</div>
+			<script>
+				function google(){
+					document.getElementById("fullform") .style = 'display:block;' ;
+					document.getElementById("over") .style = 'overflow:hidden;' ;
+				}
+				
+				function yahoo(){
+					document.getElementById("fullform") .style = 'display:none;' ;
+					document.getElementById("over") .style = 'overflow:auto;' ;
+				}
+				
+			</script>
+		</body>
+	</html>
